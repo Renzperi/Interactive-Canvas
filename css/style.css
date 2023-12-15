@@ -80,7 +80,7 @@ header{
 
 main{
   display: grid;
-	grid-template-rows: 5% 90% 5%; 
+	/* grid-template-rows: 5% 90% 5%;  */
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
   background-color: var(--main-bg-color);
@@ -169,6 +169,7 @@ nav label{
 
 	main{
 		min-height: var(--small-main);
+		grid-template-rows: 10% 45% 35%;
 	}
 
 	footer{
@@ -201,6 +202,7 @@ nav label{
 
 	main{
 		min-height: var(--small-main);
+		grid-template-rows: 10% 55% 25%;
 	}
 
 	footer{
@@ -231,6 +233,7 @@ nav label{
 
 	main{
 		min-height: var(--small-main);
+		grid-template-rows: 10% 55% 25%;
 	}
 
 	footer{
@@ -261,6 +264,7 @@ nav label{
 
 	main{
 		min-height: var(--medium-main);
+		grid-template-rows: 10% 70% 20%;
 	}
 
 	footer{
@@ -291,6 +295,7 @@ nav label{
 
 	main{
 		min-height: var(--medium-main);
+		grid-template-rows: 10% 80% 10%;
 	}
 
 	footer{
@@ -321,6 +326,7 @@ nav label{
 
 	main{
 		min-height: var(--large-main);
+		grid-template-rows: 5% 90% 5%;
 	}
 
 	footer{
@@ -351,6 +357,7 @@ nav label{
 
 	main{
 		min-height: var(--large-main);
+		grid-template-rows: 5% 90% 5%;
 	}
 
 	footer{
