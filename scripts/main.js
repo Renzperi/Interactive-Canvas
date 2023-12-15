@@ -12,4 +12,8 @@ window.onload = function(){
 		}
 	})
 	// end of dropdown menu
+
+	// for canvas
+	const canvas = document.querySelector("#gameCanvas");
+	// end of canvas
 }
