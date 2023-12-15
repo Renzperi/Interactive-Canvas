@@ -68,7 +68,7 @@ body{
 	justify-content: flex-start;
 	height: 98vh;
 	width: 98vw;
-	margin: 1vh;
+	margin: var(--page-conatiner-margin);
 	border: 1px solid var(--green-brown-border);
 }
 
@@ -78,10 +78,9 @@ header{
 }
 
 main{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
+  display: grid;
+	grid-template-rows: 1fr 4fr 1fr; 
+	grid-template-columns: 1fr 4fr 1fr;
 
   background-color: var(--main-bg-color);
   color: var(--light-brown-color);
@@ -110,7 +109,7 @@ nav label{
 	align-self: center;
 }
 
-#MenuNav{
+.MenuNav{
 	grid-row: 1/2;
 	grid-column: 2/3;
 	display: flex;
@@ -118,21 +117,31 @@ nav label{
   align-self: center;
 }
 
-#MenuNav ul li{
+.MenuNav ul li{
   display: inline-block;
 	margin: 0 1.5vw 0 1.5vw;
 }
 
-#dropdownMenuNav{
+.dropdownMenuNav{
 	grid-row: 1/2;
 	grid-column: 2/3;
 }
 
-#dropdownMenuNav button{
+.dropdownMenuNav button{
 	background-color: transparent;
 	border: none;
 	margin: 0 1vw 0 1vw;
 }
+
+.dropdownMenu {
+	grid-row: 1 / 2;
+	grid-column: 3 / 4;
+	display: none;
+	background-color: white;
+	min-width: 25vw;
+	z-index: 2;
+}
+
 
 /* Media Queries */
 @media (min-width:360px){ /*2xs*/
@@ -158,11 +167,11 @@ nav label{
 		font-size: var(--fsize-small);
 	}
 
-	#dropdownMenuNav{
+	.dropdownMenuNav{
 		display: flex;
 	}
 
-	#MenuNav{
+	.MenuNav{
 		display: none;
 	}
 }
@@ -188,11 +197,11 @@ nav label{
 		font-size: var(--fsize-small);
 	}
 
-	#dropdownMenuNav{
+	.dropdownMenuNav{
 		display: flex;
 	}
 
-	#MenuNav{
+	.MenuNav{
 		display: none;
 	}
 }
@@ -218,11 +227,11 @@ nav label{
 		font-size: var(--fsize-small);
 	}
 
-	#dropdownMenuNav{
+	.dropdownMenuNav{
 		display: flex;
 	}
 
-	#MenuNav{
+	.MenuNav{
 		display: none;
 	}
 }
@@ -248,11 +257,11 @@ nav label{
 		font-size: var(--fsize-medium);
 	}
 
-	#dropdownMenuNav{
+	.dropdownMenuNav{
 		display: none;
 	}
 
-	#MenuNav{
+	.MenuNav{
 		display: flex;
 	}
 }
@@ -278,11 +287,11 @@ nav label{
 		font-size: var(--fsize-medium);
 	}
 
-	#dropdownMenuNav{
+	.dropdownMenuNav{
 		display: none;
 	}
 
-	#MenuNav{
+	.MenuNav{
 		display: flex;
 	}
 }
@@ -308,11 +317,11 @@ nav label{
 		font-size: var(--fsize-large);
 	}
 
-	#dropdownMenuNav{
+	.dropdownMenuNav{
 		display: none;
 	}
 
-	#MenuNav{
+	.MenuNav{
 		display: flex;
 	}
 }
@@ -346,11 +355,11 @@ nav label{
 		padding: 0 0 0 1.5vw;
 	}
 	
-	#dropdownMenuNav{
+	.dropdownMenuNav{
 		display: none;
 	}
 
-	#MenuNav{
+	.MenuNav{
 		display: flex;
 	}
 }
