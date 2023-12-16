@@ -36,11 +36,11 @@ window.onload = function(){
 		}
 
 		this.update = function(){
-			if(this.x + 20 > canvas.width || this.x < 0){
+			if(this.x + this.rectWidth > canvas.width || this.x < 0){
 				this.xVelocity = -this.xVelocity;
 			}
 
-			if(this.y + 20 >canvas.height || this.y < 0){
+			if(this.y + this.rectHeight >canvas.height || this.y < 0){
 				this.yVelocity = -this.yVelocity;
 			}
 
