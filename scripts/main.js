@@ -9,14 +9,24 @@ window.onload = function(){
 
 	//for canvas grid lines
 	
+	//keyboard Event Listeners
+	let keyboard = {}; //takes user keyboard input;
+
+	window.addEventListener("keydown", (event) => {
+		keyboard[event.key] = true;
+	})
+	window.addEventListener("keyup", (event) => {
+		delete keyboard[event.key];
+	})
+
 	// player character
 	function Player(x, y, rectWidth, rectHeight){
 		this.x = x;
 		this.y = y;
 		this.rectWidth = rectWidth;
 		this.rectHeight = rectHeight;
-		this.xVelocity = 2;
-		this.yVelocity = 2;
+		this.xVelocity = 5;
+		this.yVelocity = 5;
 
 		this.draw = function(){
 			context.fillStyle = "green";
@@ -24,23 +34,40 @@ window.onload = function(){
 		}
 
 		this.update = function(){
-			if(this.x + this.rectWidth > canvas.width || this.x < 0){
-				this.xVelocity = -this.xVelocity;
+			if(keyboard['w']){
+				if(this.y < 0){
+					this.y = 0;
+				}else{
+					this.y -= this.yVelocity;
+				}
+			}else if(keyboard['s']){
+				if(this.y + this.rectHeight > canvas.height){
+					this.y = canvas.height - this.rectHeight;
+				}else{
+					this.y += this.yVelocity;
+				}
 			}
 
-			if(this.y + this.rectHeight >canvas.height || this.y < 0){
-				this.yVelocity = -this.yVelocity;
+			if(keyboard['a']){
+				if(this.x < 0){
+					this.x = 0;
+				}else{
+					this.x -= this.xVelocity;
+				}
+			}else if(keyboard['d']){
+				if(this.x + this.rectWidth > canvas.width){
+					this.x = canvas.width - this.rectWidth;
+				}else{
+					this.x += this.xVelocity;
+				}
 			}
-
-			this.x += this.xVelocity;
-			this.y += this.yVelocity;
 
 			this.draw();
 		}
 	}
 	
-	let x = 0;
-	let y = 0;
+	let x = canvas.width / 2;
+	let y = canvas.height / 2;
 	let rectWidth = 20;
 	let rectHeight = 20;
 	const player1 = new Player(x, y, rectWidth, rectHeight);
