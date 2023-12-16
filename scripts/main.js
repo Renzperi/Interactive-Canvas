@@ -15,5 +15,16 @@ window.onload = function(){
 
 	// for canvas
 	const canvas = document.querySelector("#gameCanvas");
+	const context = canvas.getContext("2d");
+	canvas.width = 720;
+	canvas.height = 720;
+
+	context.beginPath();
+	context.moveTo(0, 0);
+	context.lineTo(720, 720);
+	context.stroke();
+
+	console.log(canvas.width);
+	console.log(canvas.height);
 	// end of canvas
 }
