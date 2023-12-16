@@ -38,6 +38,9 @@
 	--medium-main: 84%;
 	--large-main: 80%;
 
+	/* pixel sizes */
+	--canvas-width: 500px;
+	--canvas-height: 400px;
 } 
 
 /*Util Classes*/
@@ -125,8 +128,8 @@ nav label{
 /* Canvas */
 .canvasContainer{
 	border: 3px solid var(--green-brown-border);
-	width: 500px;
-	height: 400px;
+	width: var(--canvas-width);
+	height: var(--canvas-height);
 }
 
 .canvasContainer canvas{
