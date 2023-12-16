@@ -41,6 +41,8 @@
 	/* pixel sizes */
 	--canvas-width: 500px;
 	--canvas-height: 400px;
+	--canvas-width-large: 1000px;
+	--canvas-height-large: 500px;
 } 
 
 /*Util Classes*/
@@ -237,6 +239,11 @@ nav label{
 	
 	.MenuNav ul li{
 		margin: 0 2vh 0 2vh;
+	}
+
+	.canvasContainer{
+		width: var(--canvas-width-large);
+		height: var(--canvas-height-large);
 	}
 	
 }
