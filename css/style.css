@@ -124,7 +124,6 @@ nav label{
 
 .MenuNav ul li{
   display: inline-block;
-	margin-right: 1em;
 }
 
 /* Canvas */
@@ -168,7 +167,7 @@ nav label{
 	}
 	
 	.MenuNav ul li{
-		display: inline-block;
+		margin-right: 1em;
 	}
 }
 

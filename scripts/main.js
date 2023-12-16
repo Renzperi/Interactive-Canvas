@@ -1,5 +1,5 @@
 window.onload = function(){
-	// for canvas
+// for canvas
 	const canvasContainer = document.querySelector(".canvasContainer");
 
 	const canvas = document.querySelector("#gameCanvas");
@@ -7,6 +7,8 @@ window.onload = function(){
 	canvas.width = canvasContainer.offsetWidth; 
 	canvas.height = canvasContainer.offsetHeight;
 
+	//for canvas grid lines
+	
 	// player character
 	function Player(x, y, rectWidth, rectHeight){
 		this.x = x;
@@ -50,5 +52,5 @@ window.onload = function(){
 		player1.update();
 	}
 	animate();
-	// end of canvas
+// end of canvas
 }
