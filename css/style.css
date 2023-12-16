@@ -117,12 +117,14 @@ nav label{
 	grid-row: 1/2;
 	grid-column: 2/3;
 	display: flex;
-  justify-content: space-evenly;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 5;
 }
 
 .MenuNav ul li{
   display: inline-block;
-	margin: 0 1.5vw 0 1.5vw;
+	margin-right: 1em;
 }
 
 /* Canvas */
@@ -158,12 +160,15 @@ nav label{
 		font-size: var(--fsize-medium);
 	}
 
-	.dropdownMenuNav{
-		display: none;
-	}
-
 	.MenuNav{
+		grid-row: 1/2;
+		grid-column: 2/3;
 		display: flex;
+		align-items: center;
+	}
+	
+	.MenuNav ul li{
+		display: inline-block;
 	}
 }
 
@@ -188,12 +193,13 @@ nav label{
 		font-size: var(--fsize-large);
 	}
 
-	.dropdownMenuNav{
-		display: none;
-	}
-
 	.MenuNav{
-		display: flex;
+		justify-content: flex-end;
+		padding-right: 5;
+	}
+	
+	.MenuNav ul li{
+		margin-right: 1em;
 	}
 }
 
@@ -225,12 +231,13 @@ nav label{
 		align-self: center;
 		padding: 0 0 0 1.5vw;
 	}
-	
-	.dropdownMenuNav{
-		display: none;
-	}
 
 	.MenuNav{
-		display: flex;
+		justify-content: center;
 	}
+	
+	.MenuNav ul li{
+		margin: 0 2vh 0 2vh;
+	}
+	
 }
