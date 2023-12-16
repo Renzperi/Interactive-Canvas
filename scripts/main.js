@@ -22,40 +22,47 @@ window.onload = function(){
 	canvas.height = canvasContainer.offsetHeight;
 
 	// player character
-	function Player(x, y){
+	function Player(x, y, rectWidth, rectHeight){
 		this.x = x;
 		this.y = y;
-		this.xVelocity = 1;
+		this.rectWidth = rectWidth;
+		this.rectHeight = rectHeight;
+		this.xVelocity = 2;
+		this.yVelocity = 2;
 
 		this.draw = function(){
 			context.fillStyle = "green";
-			context.fillRect(this.x, this.y, 20, 20);
+			context.fillRect(this.x, this.y, this.rectWidth, this.rectHeight);
 		}
 
 		this.update = function(){
-			if(this.x > canvas.width || this.x < 0){
+			if(this.x + 20 > canvas.width || this.x < 0){
 				this.xVelocity = -this.xVelocity;
 			}
 
+			if(this.y + 20 >canvas.height || this.y < 0){
+				this.yVelocity = -this.yVelocity;
+			}
+
 			this.x += this.xVelocity;
+			this.y += this.yVelocity;
 
 			this.draw();
 		}
 	}
 	
-	let x = 10;
-	let y = canvas.height / 2;
-	const player1 = new Player(x, y);
+	let x = 0;
+	let y = 0;
+	let rectWidth = 20;
+	let rectHeight = 20;
+	const player1 = new Player(x, y, rectWidth, rectHeight);
 
 	function animate(){
 		requestAnimationFrame(animate);
 		context.clearRect(0, 0, canvas.width, canvas.height);
 
 		player1.update();
-		console.log("hey");
 	}
-
 	animate();
-
 	// end of canvas
 }
