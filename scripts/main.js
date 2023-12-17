@@ -98,8 +98,6 @@ window.onload = function(){
 			
 				if(this.x == this.xTrajectory){
 					bullets.shift();
-					console.log(this.xTrajectory);
-					console.log(this.x);
 				}
 			}else if(this.x > this.xTrajectory){
 				this.xTrajectory = 0;
@@ -110,8 +108,6 @@ window.onload = function(){
 	
 				if(this.x == 0){
 					bullets.shift();
-					console.log(this.xTrajectory);
-					console.log(this.x);
 				}
 			}
 			
