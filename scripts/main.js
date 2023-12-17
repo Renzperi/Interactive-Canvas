@@ -89,29 +89,32 @@ window.onload = function(){
 		}
 
 		this.shoot = function(){
-			// if(this.x < canvas.width){
-			// 	if(this.xTrajectory < this.x){
-			// 		this.x -= this.xVelocity;
-			// 		if(this.x == this.xTrajectory){
-			// 			bullets.shift();
-			// 		}
-			// 	}else if(this.xTrajectory > this.x){
-			// 		this.x += this.xVelocity;
-			// 		if(this.x == this.xTrajectory){
-			// 			bullets.shift();
-			// 			console.log("this worked")
-			// 		}
-			// 	}
-			//}
-
-			if(this.x + this.rectWidth < canvas.width){
+			if(this.x < this.xTrajectory){
+				this.xTrajectory = canvas.width;
 				this.x += this.xVelocity;
-				if(this.x + this.rectWidth == canvas.width){
+				if(this.x > this.xTrajectory){
+					this.x = this.xTrajectory;
+				}
+			
+				if(this.x == this.xTrajectory){
 					bullets.shift();
-					console.log("this worked");
+					console.log(this.xTrajectory);
+					console.log(this.x);
+				}
+			}else if(this.x > this.xTrajectory){
+				this.xTrajectory = 0;
+				this.x -= this.xVelocity;
+				if(this.x < this.xTrajectory){
+					this.x = this.xTrajectory;
+				}
+	
+				if(this.x == 0){
+					bullets.shift();
+					console.log(this.xTrajectory);
+					console.log(this.x);
 				}
 			}
-
+			
 			this.drawBullet();
 		}
 	}
